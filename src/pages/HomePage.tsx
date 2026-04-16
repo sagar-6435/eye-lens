@@ -14,7 +14,7 @@ const HomePage: React.FC = () => {
       <section className="relative h-[85vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?q=80&w=2070&auto=format&fit=crop" 
+            src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?q=80&w=1200&auto=format&fit=crop" 
             alt="Hero" 
             className="w-full h-full object-cover"
           />
@@ -78,9 +78,9 @@ const HomePage: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { name: 'EYEGLASSES', img: 'https://images.unsplash.com/photo-1591076482161-42ce6da69f67?q=80&w=1000' },
-            { name: 'SUNGLASSES', img: 'https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?q=80&w=1000' },
-            { name: 'SCREEN GLASSES', img: 'https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?q=80&w=1000' }
+            { name: 'EYEGLASSES', img: 'https://images.unsplash.com/photo-1591076482161-42ce6da69f67?q=80&w=600&auto=format&fit=crop' },
+            { name: 'SUNGLASSES', img: 'https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?q=80&w=600&auto=format&fit=crop' },
+            { name: 'SCREEN GLASSES', img: 'https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?q=80&w=600&auto=format&fit=crop' }
           ].map((cat, i) => (
             <motion.div 
               key={i}
