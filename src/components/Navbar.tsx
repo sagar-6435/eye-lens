@@ -29,7 +29,11 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link to="/" className="text-2xl font-bold tracking-tighter text-primary">
+        <Link 
+          to="/" 
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="text-2xl font-bold tracking-tighter text-primary"
+        >
           EYELENS
         </Link>
 
