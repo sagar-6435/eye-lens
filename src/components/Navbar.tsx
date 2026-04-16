@@ -39,6 +39,13 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
+          <Link 
+            to="/" 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className={`text-sm font-medium transition-colors ${location.pathname === '/' ? 'text-accent' : 'hover:text-accent'}`}
+          >
+            HOME
+          </Link>
           <Link to="/shop" className="text-sm font-medium hover:text-accent transition-colors">EYEGLASSES</Link>
           <Link to="/shop?category=Sunglasses" className="text-sm font-medium hover:text-accent transition-colors">SUNGLASSES</Link>
           <Link to="/shop?category=Computer Glasses" className="text-sm font-medium hover:text-accent transition-colors">SCREEN GLASSES</Link>
@@ -90,6 +97,13 @@ const Navbar: React.FC = () => {
             className="md:hidden bg-white border-t border-border overflow-hidden"
           >
             <div className="flex flex-col p-4 space-y-4">
+              <Link 
+                to="/" 
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="text-lg font-medium border-b border-border pb-2"
+              >
+                Home
+              </Link>
               <Link to="/shop" className="text-lg font-medium border-b border-border pb-2">Eyeglasses</Link>
               <Link to="/shop?category=Sunglasses" className="text-lg font-medium border-b border-border pb-2">Sunglasses</Link>
               <Link to="/shop?category=Computer Glasses" className="text-lg font-medium border-b border-border pb-2">Screen Glasses</Link>
