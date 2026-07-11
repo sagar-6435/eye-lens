@@ -20,29 +20,29 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       animate={{ opacity: 1 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative bg-white rounded-3xl overflow-hidden border border-border shadow-sm hover:shadow-premium transition-all duration-500"
+      className="group relative bg-muted rounded-3xl overflow-hidden border border-border shadow-soft hover:shadow-premium transition-all duration-500"
     >
       {/* Badges */}
       <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
         {product.isBestSeller && (
-          <span className="bg-primary text-white text-[9px] font-black px-3 py-1.5 rounded-lg tracking-[0.2em]">
+          <span className="bg-primary text-secondary text-[9px] font-black px-3 py-1.5 rounded-lg tracking-[0.2em]">
             BEST SELLER
           </span>
         )}
         {product.isNewArrival && (
-          <span className="bg-accent text-white text-[9px] font-black px-3 py-1.5 rounded-lg tracking-[0.2em]">
+          <span className="bg-accent text-secondary text-[9px] font-black px-3 py-1.5 rounded-lg tracking-[0.2em]">
             NEW ARRIVAL
           </span>
         )}
       </div>
 
       {/* Wishlist Button */}
-      <button className="absolute top-4 right-4 z-10 p-2 bg-white/80 backdrop-blur-sm rounded-full text-muted-foreground hover:text-red-500 transition-colors shadow-sm opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 duration-300">
+      <button className="absolute top-4 right-4 z-10 p-2 bg-black/40 backdrop-blur-sm rounded-full text-primary/70 hover:text-red-400 transition-colors opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 duration-300">
         <Heart size={18} />
       </button>
 
       {/* Image Gallery */}
-      <div className="block overflow-hidden relative aspect-[4/5] bg-zinc-50">
+      <div className="block overflow-hidden relative aspect-[4/5] bg-secondary/50">
         <Link to={`/product/${product.id}`} className="block w-full h-full">
           <motion.img
             src={isHovered && product.images[1] ? product.images[1] : product.images[0]}
@@ -63,7 +63,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               <h3 className="text-sm font-bold group-hover:text-accent transition-colors truncate max-w-[150px]">{product.name}</h3>
             </Link>
           </div>
-          <div className="flex items-center gap-1 bg-zinc-50 px-2 py-1 rounded-lg">
+          <div className="flex items-center gap-1 bg-white/5 px-2 py-1 rounded-lg">
             <Star size={10} className="fill-accent text-accent" />
             <span className="text-[10px] font-bold">{product.rating}</span>
           </div>
@@ -74,7 +74,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             {product.colors.map((color, i) => (
               <div 
                 key={i} 
-                className="w-3 h-3 rounded-full border border-white ring-1 ring-zinc-200"
+                className="w-3 h-3 rounded-full border border-white/20 ring-1 ring-white/10"
                 style={{ backgroundColor: color.toLowerCase() }}
               />
             ))}
@@ -92,7 +92,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={() => addItem(product)}
-            className="p-3 bg-secondary rounded-2xl text-primary hover:bg-primary hover:text-white transition-all duration-300 shadow-sm"
+            className="p-3 bg-white/5 border border-border rounded-2xl text-primary hover:bg-accent hover:text-secondary hover:border-accent transition-all duration-300"
           >
             <Plus size={20} />
           </motion.button>

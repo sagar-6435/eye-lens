@@ -7,34 +7,35 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Sophisticated Premium Palette
+        // Dark Cinematic Luxury Palette — matches video background
         primary: {
-          DEFAULT: '#0A1128', // Deep Night Navy
-          foreground: '#FFFFFF',
+          DEFAULT: '#E8DCC8', // Warm Ivory (main text on dark)
+          foreground: '#0D0D0D',
         },
         accent: {
-          DEFAULT: '#C5A059', // Muted Champagne Gold
-          hover: '#B68F46',
-          light: '#F4EBD0',
+          DEFAULT: '#C9A96E', // Rich Champagne Gold
+          hover: '#B8924F',
+          light: '#3A2E1E',  // Dark gold tint for subtle bg
         },
         secondary: {
-          DEFAULT: '#FDFCFB', // Pearl White
-          foreground: '#0A1128',
+          DEFAULT: '#0D0D0D', // Near Black (page background)
+          foreground: '#E8DCC8',
         },
         muted: {
-          DEFAULT: '#F0F2F5',
-          foreground: '#64748B',
+          DEFAULT: '#1A1A1A', // Dark card background
+          foreground: '#8A8070', // Warm muted text
         },
-        border: '#E2E8F0',
+        border: '#2A2520',   // Dark warm border
+        surface: '#161412',  // Slightly lighter than bg for cards
       },
       fontFamily: {
         sans: ['Outfit', 'Inter', 'sans-serif'],
         serif: ['Playfair Display', 'serif'],
       },
       boxShadow: {
-        'premium': '0 20px 40px -15px rgba(10, 17, 40, 0.08)',
-        'soft': '0 8px 30px rgba(0, 0, 0, 0.04)',
-        'gold': '0 10px 20px -5px rgba(197, 160, 89, 0.2)',
+        'premium': '0 20px 40px -15px rgba(0, 0, 0, 0.6)',
+        'soft': '0 8px 30px rgba(0, 0, 0, 0.3)',
+        'gold': '0 10px 20px -5px rgba(201, 169, 110, 0.25)',
       },
       borderRadius: {
         '3xl': '24px',

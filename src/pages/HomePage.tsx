@@ -13,12 +13,16 @@ const HomePage: React.FC = () => {
       {/* Hero Section */}
       <section className="relative h-[85vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?q=80&w=1200&auto=format&fit=crop" 
-            alt="Hero" 
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
             className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/40 to-transparent" />
+          >
+            <source src="/bg-video.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent" />
         </div>
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -28,10 +32,10 @@ const HomePage: React.FC = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-2xl"
           >
-            <span className="inline-block bg-accent px-4 py-1.5 rounded-full text-xs font-bold tracking-widest mb-6">
+            <span className="inline-block bg-accent/20 border border-accent/40 text-accent px-4 py-1.5 rounded-full text-xs font-bold tracking-widest mb-6">
               NEW COLLECTION 2026
             </span>
-            <h1 className="text-6xl md:text-8xl font-serif italic tracking-tight leading-none mb-8">
+            <h1 className="text-6xl md:text-8xl font-serif italic tracking-tight leading-none mb-8 text-primary">
               Vision <br /> <span className="text-accent underline decoration-1 underline-offset-8">Beyond</span> <br /> Luxury.
             </h1>
             <p className="text-lg text-muted-foreground mb-10 max-w-lg leading-relaxed">
@@ -120,35 +124,34 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Trust Builder */}
       <section className="container mx-auto px-4 md:px-6 border-t border-border pt-24">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="text-center md:text-left">
-            <div className="w-16 h-16 bg-zinc-100 rounded-3xl flex items-center justify-center text-primary mb-6 mx-auto md:mx-0">
+            <div className="w-16 h-16 bg-muted rounded-3xl flex items-center justify-center text-accent mb-6 mx-auto md:mx-0">
               <Truck size={32} />
             </div>
-            <h4 className="font-bold mb-2">Free Shipping</h4>
+            <h4 className="font-bold mb-2 text-primary">Free Shipping</h4>
             <p className="text-sm text-muted-foreground">On all orders above ₹1000</p>
           </div>
           <div className="text-center md:text-left">
-            <div className="w-16 h-16 bg-zinc-100 rounded-3xl flex items-center justify-center text-primary mb-6 mx-auto md:mx-0">
+            <div className="w-16 h-16 bg-muted rounded-3xl flex items-center justify-center text-accent mb-6 mx-auto md:mx-0">
               <RefreshCw size={32} />
             </div>
-            <h4 className="font-bold mb-2">14 Days Return</h4>
+            <h4 className="font-bold mb-2 text-primary">14 Days Return</h4>
             <p className="text-sm text-muted-foreground">No questions asked return policy</p>
           </div>
           <div className="text-center md:text-left">
-            <div className="w-16 h-16 bg-zinc-100 rounded-3xl flex items-center justify-center text-primary mb-6 mx-auto md:mx-0">
+            <div className="w-16 h-16 bg-muted rounded-3xl flex items-center justify-center text-accent mb-6 mx-auto md:mx-0">
               <ShieldCheck size={32} />
             </div>
-            <h4 className="font-bold mb-2">1 Year Warranty</h4>
+            <h4 className="font-bold mb-2 text-primary">1 Year Warranty</h4>
             <p className="text-sm text-muted-foreground">Comprehensive frame warranty</p>
           </div>
           <div className="text-center md:text-left">
-            <div className="w-16 h-16 bg-zinc-100 rounded-3xl flex items-center justify-center text-primary mb-6 mx-auto md:mx-0">
+            <div className="w-16 h-16 bg-muted rounded-3xl flex items-center justify-center text-accent mb-6 mx-auto md:mx-0">
               <Star size={32} />
             </div>
-            <h4 className="font-bold mb-2">Premium Quality</h4>
+            <h4 className="font-bold mb-2 text-primary">Premium Quality</h4>
             <p className="text-sm text-muted-foreground">Sourced from top materials</p>
           </div>
         </div>

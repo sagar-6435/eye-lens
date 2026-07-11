@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'
+        isScrolled ? 'bg-secondary/90 backdrop-blur-md shadow-premium py-3 border-b border-border' : 'bg-transparent py-5'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -52,12 +52,12 @@ const Navbar: React.FC = () => {
         </div>
 
         <div className="flex items-center space-x-4 md:space-x-6">
-          <div className="hidden sm:flex items-center border border-border rounded-full px-3 py-1.5 bg-white/50 focus-within:bg-white focus-within:border-primary transition-all">
+          <div className="hidden sm:flex items-center border border-border rounded-full px-3 py-1.5 bg-white/5 focus-within:bg-white/10 focus-within:border-accent transition-all">
             <Search size={16} className="text-muted-foreground mr-2" />
             <input 
               type="text" 
               placeholder="Search frames..." 
-              className="bg-transparent border-none outline-none text-sm w-32 focus:w-48 transition-all"
+              className="bg-transparent border-none outline-none text-sm w-32 focus:w-48 transition-all text-primary placeholder:text-muted-foreground"
             />
           </div>
           
@@ -94,7 +94,7 @@ const Navbar: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-border overflow-hidden"
+            className="md:hidden bg-secondary border-t border-border overflow-hidden"
           >
             <div className="flex flex-col p-4 space-y-4">
               <Link 

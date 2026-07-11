@@ -4,7 +4,7 @@ import { Globe, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-zinc-50 border-t border-border pt-16 pb-8">
+    <footer className="bg-muted border-t border-border pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
@@ -15,16 +15,16 @@ const Footer: React.FC = () => {
               Premium eyewear for every vision. We combine style, comfort, and advanced technology to bring you the best in eye care.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="p-2 bg-white rounded-full border border-border hover:text-accent transition-colors shadow-sm">
+              <a href="#" className="p-2 bg-white/5 rounded-full border border-border hover:text-accent transition-colors">
                 <Globe size={18} />
               </a>
-              <a href="#" className="p-2 bg-white rounded-full border border-border hover:text-accent transition-colors shadow-sm">
+              <a href="#" className="p-2 bg-white/5 rounded-full border border-border hover:text-accent transition-colors">
                 <Globe size={18} />
               </a>
-              <a href="#" className="p-2 bg-white rounded-full border border-border hover:text-accent transition-colors shadow-sm">
+              <a href="#" className="p-2 bg-white/5 rounded-full border border-border hover:text-accent transition-colors">
                 <Globe size={18} />
               </a>
-              <a href="#" className="p-2 bg-white rounded-full border border-border hover:text-accent transition-colors shadow-sm">
+              <a href="#" className="p-2 bg-white/5 rounded-full border border-border hover:text-accent transition-colors">
                 <Globe size={18} />
               </a>
             </div>
@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center bg-zinc-50">
+        <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center bg-muted">
           <p className="text-xs text-muted-foreground mb-4 md:mb-0">
             © 2026 Eyelens Eyewear Pvt Ltd. All rights reserved.
           </p>

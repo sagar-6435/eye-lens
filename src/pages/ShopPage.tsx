@@ -50,7 +50,7 @@ const ShopPage: React.FC = () => {
               placeholder="Search frames..." 
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 bg-zinc-50 border border-border rounded-xl outline-none focus:border-primary transition-all"
+              className="w-full pl-10 pr-4 py-2 bg-muted border border-border rounded-xl outline-none focus:border-accent transition-all text-primary placeholder:text-muted-foreground"
             />
           </div>
           <button 
@@ -73,7 +73,7 @@ const ShopPage: React.FC = () => {
             <div className="space-y-2">
               <button 
                 onClick={() => setSelectedCategory(null)}
-                className={`block w-full text-left py-2 px-3 rounded-lg text-sm transition-colors ${!selectedCategory ? 'bg-primary text-white' : 'hover:bg-zinc-100'}`}
+                className={`block w-full text-left py-2 px-3 rounded-lg text-sm transition-colors ${!selectedCategory ? 'bg-accent text-secondary' : 'hover:bg-muted'}`}
               >
                 All Products
               </button>
@@ -81,7 +81,7 @@ const ShopPage: React.FC = () => {
                 <button 
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`block w-full text-left py-2 px-3 rounded-lg text-sm transition-colors ${selectedCategory === cat ? 'bg-primary text-white' : 'hover:bg-zinc-100'}`}
+                  className={`block w-full text-left py-2 px-3 rounded-lg text-sm transition-colors ${selectedCategory === cat ? 'bg-accent text-secondary' : 'hover:bg-muted'}`}
                 >
                   {cat}
                 </button>
@@ -96,7 +96,7 @@ const ShopPage: React.FC = () => {
                 <button 
                   key={shape}
                   onClick={() => toggleShape(shape)}
-                  className={`py-2 px-1 border rounded-xl text-[11px] font-medium transition-all ${selectedShapes.includes(shape) ? 'bg-zinc-900 text-white border-zinc-900' : 'border-border hover:border-zinc-400'}`}
+                  className={`py-2 px-1 border rounded-xl text-[11px] font-medium transition-all ${selectedShapes.includes(shape) ? 'bg-accent text-secondary border-accent' : 'border-border hover:border-accent/50'}`}
                 >
                   {shape}
                 </button>
@@ -124,9 +124,9 @@ const ShopPage: React.FC = () => {
         {/* Main Grid */}
         <div className="flex-grow">
           {/* Toolbar */}
-          <div className="flex justify-between items-center mb-8 bg-zinc-50 p-3 rounded-2xl">
+          <div className="flex justify-between items-center mb-8 bg-muted p-3 rounded-2xl">
             <div className="flex items-center gap-2">
-              <button className="p-2 bg-white rounded-lg shadow-sm text-primary"><Grid size={18} /></button>
+              <button className="p-2 bg-white/5 rounded-lg text-accent"><Grid size={18} /></button>
               <button className="p-2 text-muted-foreground hover:text-primary"><ListIcon size={18} /></button>
             </div>
             <div className="flex items-center gap-3">
@@ -134,7 +134,7 @@ const ShopPage: React.FC = () => {
               <select 
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="bg-white border border-border rounded-xl px-4 py-2 text-sm outline-none focus:border-primary cursor-pointer"
+                className="bg-secondary border border-border rounded-xl px-4 py-2 text-sm outline-none focus:border-accent cursor-pointer text-primary"
               >
                 <option value="popularity">Popularity</option>
                 <option value="price-low">Price: Low to High</option>
@@ -163,9 +163,9 @@ const ShopPage: React.FC = () => {
           </div>
 
           {filteredProducts.length === 0 && (
-            <div className="text-center py-24 bg-zinc-50 rounded-[3rem]">
-              <div className="w-20 h-20 bg-zinc-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Search size={32} className="text-zinc-500" />
+            <div className="text-center py-24 bg-muted rounded-[3rem]">
+              <div className="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Search size={32} className="text-muted-foreground" />
               </div>
               <h2 className="text-2xl font-bold mb-2">No products found</h2>
               <p className="text-muted-foreground mb-8">Try adjusting your filters or search terms.</p>
@@ -200,11 +200,11 @@ const ShopPage: React.FC = () => {
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              className="absolute right-0 top-0 bottom-0 w-full max-w-xs bg-white p-8 overflow-y-auto shadow-2xl"
+              className="absolute right-0 top-0 bottom-0 w-full max-w-xs bg-secondary p-8 overflow-y-auto shadow-2xl border-l border-border"
             >
               <div className="flex justify-between items-center mb-10">
                 <h3 className="text-2xl font-bold uppercase tracking-tight">Filters</h3>
-                <button onClick={() => setIsMobileFilterOpen(false)} className="p-2 rounded-full bg-zinc-100"><X size={20} /></button>
+                <button onClick={() => setIsMobileFilterOpen(false)} className="p-2 rounded-full bg-muted"><X size={20} /></button>
               </div>
               
               <div className="space-y-12">
@@ -215,7 +215,7 @@ const ShopPage: React.FC = () => {
                         <button 
                           key={cat}
                           onClick={() => setSelectedCategory(cat === 'All' ? null : cat)}
-                          className={`px-4 py-2 rounded-full text-sm font-medium border transition-all ${((cat === 'All' && !selectedCategory) || selectedCategory === cat) ? 'bg-primary text-white border-primary' : 'bg-transparent border-zinc-200'}`}
+                          className={`px-4 py-2 rounded-full text-sm font-medium border transition-all ${((cat === 'All' && !selectedCategory) || selectedCategory === cat) ? 'bg-accent text-secondary border-accent' : 'bg-transparent border-border hover:border-accent/50'}`}
                         >
                           {cat}
                         </button>
@@ -224,13 +224,13 @@ const ShopPage: React.FC = () => {
                 </div>
 
                 <div>
-                   <h3 className="font-bold text-sm uppercase tracking-widest mb-6 border-t border-zinc-100 pt-8">Frame Shape</h3>
+                   <h3 className="font-bold text-sm uppercase tracking-widest mb-6 border-t border-border pt-8">Frame Shape</h3>
                    <div className="grid grid-cols-2 gap-3">
                      {shapes.map((shape) => (
                         <button 
                           key={shape}
                           onClick={() => toggleShape(shape)}
-                          className={`px-4 py-3 rounded-2xl text-xs font-semibold border transition-all ${selectedShapes.includes(shape) ? 'bg-primary text-white border-primary' : 'bg-transparent border-zinc-200'}`}
+                          className={`px-4 py-3 rounded-2xl text-xs font-semibold border transition-all ${selectedShapes.includes(shape) ? 'bg-accent text-secondary border-accent' : 'bg-transparent border-border hover:border-accent/50'}`}
                         >
                           {shape}
                         </button>
@@ -239,7 +239,7 @@ const ShopPage: React.FC = () => {
                 </div>
 
                 <div>
-                  <div className="flex justify-between items-center mb-6 border-t border-zinc-100 pt-8">
+                  <div className="flex justify-between items-center mb-6 border-t border-border pt-8">
                     <h3 className="font-bold text-sm uppercase tracking-widest">Price Range</h3>
                     <span className="text-sm font-bold">₹{priceRange}</span>
                   </div>
@@ -250,7 +250,7 @@ const ShopPage: React.FC = () => {
                     step="500"
                     value={priceRange}
                     onChange={(e) => setPriceRange(parseInt(e.target.value))}
-                    className="w-full accent-primary h-2 bg-zinc-200 rounded-full appearance-none cursor-pointer"
+                    className="w-full accent-accent h-2 bg-muted rounded-full appearance-none cursor-pointer"
                   />
                 </div>
 
