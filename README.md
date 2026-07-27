@@ -1,1 +1,0 @@
-ohm namah shivaya
