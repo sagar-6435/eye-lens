@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 const path = require('path');
 
 // Load env vars from the root directory
-dotenv.config({ path: path.join(__dirname, '../.env') });
+dotenv.config();
 
 const productRoutes = require('./routes/productRoutes');
 const orderRoutes = require('./routes/orderRoutes');
